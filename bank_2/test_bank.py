@@ -17,3 +17,6 @@ def test_begin_with_digit():
 def test_begin_symbols():
     assert value('#%^&') == f'${100}'
 
+def test_upper():
+    assert value('HELLO,HOW ARE YOU').lower() == f'${0}'
+

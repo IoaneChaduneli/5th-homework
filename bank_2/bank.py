@@ -1,14 +1,16 @@
 def main():
-    greet = input("Say Greeting: ")
+    greet = input("Say Greeting: ").lower()
     print(value(greet))
 
 def value(greeting):
-    if greeting[0] != 'h' or len(greeting) <= 1:
-        return f'${100}' 
-    elif greeting[0:5] == 'hello':
-        return f'${0}'
-    elif greeting[0:3] == 'hey' or 'hi':
-        return f'${20}' 
+    if len(greeting) > 1:
+        if greeting.startswith('hello'):
+            return f'${0}'
+        elif greeting.startswith('h'):
+            return f'${20}' 
+        else:
+            return f'${100}'
+    return f'${100}'
  
     
     
