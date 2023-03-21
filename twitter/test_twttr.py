@@ -7,7 +7,7 @@ def test_with_vowels():
     assert shorten('AEIOU') == ''
 
 def test_no_vowels():
-    assert shorten('twitter') == 'twttr'
+    assert shorten('TWITTER') == 'twttr'
 
 def test_digit_number():
     assert shorten('576840383') == ''
@@ -16,7 +16,7 @@ def test_symbols():
     assert shorten('$%#@') == ''
 
 def letters_digit():
-    assert shorten('65hjg645') == 'jg'
+    assert shorten('jieuge') == 'jg'
 
 def digits_with_vowels():
     assert shorten('657ea73iou') == ''
