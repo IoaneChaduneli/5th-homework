@@ -11,13 +11,16 @@ def main():
 def convert(fraction):
     try:
         x , y = map(int, fraction.split('/'))
-        if x <= y:
-            return Fraction(x,y)
+        if y > 0 and x > 0:
+            if x <= y:
+                return Fraction(x,y)
+            else:
+                raise ValueError
         else:
-            raise ValueError
+            raise ZeroDivisionError
         
-    except ValueError:
-        return f'You enter letters instead of digit or Y denominator is less than x counter'
+    except (ValueError, ZeroDivisionError):
+        return f'You enter letters instead of digit or Y denominator is less than x counter or y is zero'
 
 
 
